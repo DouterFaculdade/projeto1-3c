@@ -1,0 +1,102 @@
+body {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+}
+
+.box {
+    background-color: rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-rows: 300px 300px;
+    gap: 1em;
+    grid-template-areas:
+        "box-1 box-2 box-2 box-3"
+        "box-1 box-4 box-5 box-5";
+
+    
+}
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Adiciona a animação a cada .box */
+.box {
+  background-color: rgb(0, 0, 0);
+  border-radius: 20px;
+  opacity: 0;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+/* Adiciona delays diferentes para efeito em cascata */
+.box:nth-child(1) {
+  animation-name: slideInFromTop;
+  animation-delay: 0.1s;
+}
+
+.box:nth-child(2) {
+  animation-name: slideInFromTop;
+  animation-delay: 0.2s;
+}
+
+.box:nth-child(3) {
+  animation-name: slideInFromRight;
+  animation-delay: 0.3s;
+}
+
+.box:nth-child(4) {
+  animation-name: slideInFromBottom;
+  animation-delay: 0.4s;
+}
+
+.box:nth-child(5) {
+  animation-name: slideInFromRight;
+  animation-delay: 0.5s;
+}
