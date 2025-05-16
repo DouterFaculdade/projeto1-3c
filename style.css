@@ -135,7 +135,9 @@ body {
 }
 
 .flip-card-front {
-  background-color: black;
+  background-image: url('https://picsum.photos/600/00');
+  background-size: cover;
+  background-position: center;
 }
 
 .flip-card-back {
